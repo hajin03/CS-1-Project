@@ -208,7 +208,7 @@ def main():
             print("Goodbye!")
             break
 
-        elif choice == '6':     #Added a word search feature that counts a word in a book
+        elif choice == '6':     #I implemented a word search feature in the code, when the user enter 6 in input, the program counts how many times a word appears in the selected book. 
             name_input = input("Which book? ").strip().lower()
             target_key = None
             for k in my_library:
