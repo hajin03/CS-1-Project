@@ -1,24 +1,3 @@
-"""
-Concepts We Are Practicing:
-- Functions
-- Loops and Menu-Driven Programs
-- Lists and Data Filtering
-- Dictionaries
-- Counter (from collections)
-
-Modules and Libraries:
-- API Requests (requests)
-- Text Processing (re - regular expressions)
-"""
-
-"""
-Author: Hajin Kim
-GitHub Link: https://github.com/hajin03/CS-1-Project
-Project: Book Analyzer (CS I Project)
-Extra credit: I have fixed the bug in line no:.... or 
-              I implemeted a new feature:  if choice == '6', new feature ............ will be executed
-"""
-
 import requests
 import re
 from collections import Counter
@@ -32,21 +11,13 @@ my_library = {
     "Moby Dick": "https://www.gutenberg.org/files/2701/2701-0.txt"
 }
 
-# TODO 3: Read stop words from a file instead; this file "EN-Stopwords" contains thousands stop words(2 points)
 with open("EN-Stopwords.txt", "r") as f:
     STOP_WORDS = set(word.strip().lower() for word in f.readlines())
-'''  
-STOP_WORDS = {
-    "the", "and", "to", "of", "in", "i",
-    "a", "it", "that", "was"
-}
-'''
+  
 # -----------------------------
 # FETCH BOOK
 # -----------------------------
 def fetch_book(url):
-    """Download text from a URL."""
-    # TODO 4: Handle exceptions (network errors, invalid URLs, etc.) (1 point)
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
@@ -81,8 +52,6 @@ def analyze_text(words):
 # -----------------------------
 # VISUALIZATION (BAR CHART)
 # -----------------------------
-# TODO 5: Implement the following function (2 points)
-# hints: use print() statements to create a horizontal bar chart using the "█" or "*" character.
 def plot_results(stats, title):
     """Create a bar chart of word frequencies."""
     print(f"--- Top 10 Words in {title} ---")
@@ -111,20 +80,15 @@ def main():
         choice = input("\nSelect (1-6): ")
 
         if choice == '1':
-            # Add new books to the dictionary (use this website: https://www.gutenberg.org/browse/scores/top)
-            # TODO 1.1: Normalize input by removing extra spaces and ignoring case.
-            
-                # (e.g., " The Hobbit " (with space) and "the hobbit" should be treated as the same book4.) (1 point)
             raw_name = input("Enter Book Title: ")
             name = raw_name.strip()
             normalized = name.lower()
             url = input("Enter Gutenberg .txt URL: ").strip()
-
-            # TODO 1.2: Validate that the Book title or URL is not empty (1 point)
+          
             if name == "" or url == "":
                 print("Error: Book title or URL cannot be empty.")
                 continue
-            # TODO 1.3: Prevent duplicate book names (1 point)
+            
             duplicate = False
             for k in my_library:
                 if k.lower() == normalized:
@@ -142,10 +106,6 @@ def main():
             
 
         elif choice == '2':
-            # Remove books from the dictionary
-            #TODO 2.1: Handle missing books—check if the title exists before trying to delete it.(1 point)
-            #TODO 2.2: Make the removal case-insensitive so "The Hobbit" matches "the hobbit".(1 point)
-            # Hint: Use .strip().lower() to normalize the user's input!
             name = input("Enter title to remove: ").strip().lower()
 
             found = False
@@ -157,20 +117,21 @@ def main():
                     found = True
                     break
 
-                if not found:
-                    print("Book not found")
+            if not found:
+              print("Book not found")
+              
             
             
 
-        elif choice == '3':
+            elif choice == '3':
             # UPDATE OPERATION
             name_input = input("Enter the book title to update: ").strip().lower()
-            target_key = None  # Start with None in case we don't find it
+            target_key = None
 
             for k in my_library:
                 if k.lower() == name_input:
                     target_key = k
-                    break  # We found it, so stop looking
+                    break  
 
             if target_key:
                 print(f"Current URL: {my_library[target_key]}")
