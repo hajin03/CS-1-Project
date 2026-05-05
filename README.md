@@ -1,24 +1,18 @@
-# CS-1-Project
-Book Analyzer (CS 1 Project)
-# 📚 Book Analyzer
-This project is a program that allows users to manage a small digital library and analyze books from Project Gutenberg.
+# 📚 Book Analyzer (CS I Project)
+
+This project is a Python program that allows users to manage a small digital library and analyze books from Project Gutenberg.
 
 ## 🚀 Features
 
-- Add, remove, and update books in a personal library
-- Download book text from a URL using the `requests` library
-- Clean and process text using regular expressions
-- Remove stop words loaded from an external file
-- Analyze word frequency using `collections.Counter`
-- Display the top 10 most frequent words with a bar chart
+- Add, remove, and update books in a personal library  
+- Download book text from a URL using the `requests` library    
+- Analyze word frequency using `collections.Counter`  
 - Case-insensitive search and input handling
-
-### 📊 Text Analysis
-
-The program processes book text by:
-1. Converting all text to lowercase
-2. Removing punctuation using regular expressions
-3. Filtering out common stop words
-4. Counting word frequencies
-
+- 
 Results are displayed using a simple horizontal bar chart made with characters.
+
+### ⭐ Extra Feature
+
+- Search for a word in a selected book  
+- Count how many times the word appears  
+- Display a short context example from the text  
