@@ -8,7 +8,7 @@ This project is a Python program that allows users to manage a small digital lib
 - Download book text from a URL using the `requests` library    
 - Analyze word frequency using `collections.Counter`  
 - Case-insensitive search and input handling
-- 
+
 Results are displayed using a simple horizontal bar chart made with characters.
 
 ### ⭐ Extra Feature
