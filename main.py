@@ -12,8 +12,8 @@ Modules and Libraries:
 """
 
 """
-Author: Your Name
-GitHub Link: https://github.com/your-username/your-repo
+Author: Hajin Kim
+GitHub Link: https://github.com/hajin03/CS-1-Project
 Project: Book Analyzer (CS I Project)
 Extra credit: I have fixed the bug in line no:.... or 
               I implemeted a new feature:  if choice == '6', new feature ............ will be executed
